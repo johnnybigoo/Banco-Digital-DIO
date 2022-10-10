@@ -8,11 +8,14 @@ public class Pessoa {
     private String email;
 
 
-    public Pessoa(String nome, String CPF, String email) {
+    public Pessoa() {
         this.nome = nome;
         this.CPF = CPF;
         this.email = email;
         counter += 1;
+    }
+
+    public Pessoa(String nome, String cpf, String email) {
     }
 
     public String getNome() {
