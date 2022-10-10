@@ -112,7 +112,6 @@ public class AgenciaBancaria {
             System.out.println("Qual o valor deseja sacar? ");
             Double valorSaque = input.nextDouble();
             conta.sacar(valorSaque);
-            System.out.println("Valor sacado com sucesso!");
         } else {
             System.out.println(" == Conta nao encontrada! == ");
         }
@@ -136,7 +135,11 @@ public class AgenciaBancaria {
                 Double valor = input.nextDouble();
 
                 contaOrigem.transferir(contaDestinatario, valor);
+            } else {
+                System.out.println("A conta para deposito nao foi encontrada.");
             }
+        } else {
+            System.out.println("Conta para transferencia nao encontrada.");
         }
         operacoes();
     }
