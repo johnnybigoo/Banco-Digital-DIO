@@ -1,3 +1,5 @@
+package program;
+
 public class Pessoa {
     private static int counter = 1;
 
@@ -39,7 +41,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
+        return "program.Pessoa{" +
                 "nome='" + nome + '\'' +
                 ", CPF='" + CPF + '\'' +
                 ", email='" + email + '\'' +
