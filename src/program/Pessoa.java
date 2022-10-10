@@ -4,18 +4,15 @@ public class Pessoa {
     private static int counter = 1;
 
     private String nome;
-    private String CPF;
+    private String cpf;
     private String email;
 
 
-    public Pessoa() {
+    public Pessoa(String nome, String cpf, String email) {
         this.nome = nome;
-        this.CPF = CPF;
+        this.cpf = cpf;
         this.email = email;
         counter += 1;
-    }
-
-    public Pessoa(String nome, String cpf, String email) {
     }
 
     public String getNome() {
@@ -27,11 +24,11 @@ public class Pessoa {
     }
 
     public String getCPF() {
-        return CPF;
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCPF(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getEmail() {
@@ -46,7 +43,7 @@ public class Pessoa {
     public String toString() {
         return "program.Pessoa{" +
                 "nome='" + nome + '\'' +
-                ", CPF='" + CPF + '\'' +
+                ", CPF='" + cpf + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

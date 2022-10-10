@@ -84,4 +84,72 @@ public class AgenciaBancaria {
         }
         return conta;
     }
+
+    public static void depositar() {
+        System.out.println("Numero da conta: ");
+        int numeroConta = input.nextInt();
+
+        Conta conta = encontraConta(numeroConta);
+
+        if(conta != null) {
+            System.out.println("Qual o valor deseja depositar? ");
+            Double valorDeposito = input.nextDouble();
+            conta.deposita(valorDeposito);
+            System.out.println("Valor depositado com sucesso!");
+        } else {
+            System.out.println(" == Conta nao encontrada! == ");
+        }
+        operacoes();
+    }
+
+    public static void sacar() {
+        System.out.println("Numero da conta: ");
+        int numeroConta = input.nextInt();
+
+        Conta conta = encontraConta(numeroConta);
+
+        if (conta != null) {
+            System.out.println("Qual o valor deseja sacar? ");
+            Double valorSaque = input.nextDouble();
+            conta.sacar(valorSaque);
+            System.out.println("Valor sacado com sucesso!");
+        } else {
+            System.out.println(" == Conta nao encontrada! == ");
+        }
+        operacoes();
+    }
+
+    public static void transferir() {
+        System.out.println("Numero da conta origem: ");
+        int numeroContaOrigem = input.nextInt();
+
+        Conta contaOrigem = encontraConta(numeroContaOrigem);
+
+        if(contaOrigem != null) {
+            System.out.println("Numero da conta destinatario: ");
+            int numeroContaDestinatario = input.nextInt();
+
+            Conta contaDestinatario = encontraConta(numeroContaDestinatario);
+
+            if(contaDestinatario != null) {
+                System.out.println("Informe o valor a ser transferido: ");
+                Double valor = input.nextDouble();
+
+                contaOrigem.transferir(contaDestinatario, valor);
+            }
+        }
+        operacoes();
+    }
+
+    public static void listar() {
+        if (contasBancarias.size() > 0) {
+            for (Conta conta : contasBancarias) {
+                System.out.println(conta);
+            }
+
+        } else {
+            System.out.println("Nao ha contas cadastradas...");
+        }
+        operacoes();
+    }
 }
